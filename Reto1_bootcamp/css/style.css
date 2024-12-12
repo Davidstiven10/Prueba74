@@ -1,0 +1,372 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    /*-----este codigo sirve para la transicion de dark/ligth para que se vea mas suavizado y estilizado------*/
+    transition: background-color 0.5s ease, color 0.5s ease; /* Suaviza cambios de fondo y texto */
+
+}
+
+#particles-js {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+header, footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 18px;
+    position: relative;
+    /*-----este codigo sirve para la transicion de dark/ligth para que se vea mas suavizado y estilizado------*/
+    transition: background-color 0.5s ease, color 0.5s ease; /* Transición en modos oscuro y claro */
+}
+
+header div  {
+    margin-left: 200px;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para el contenedor */
+    background-color: #ffffff;
+    border-radius: 10px;
+    /*---------Animacion de entrada-------------*/
+    opacity: 0; /* Oculto inicialmente */
+    transform: translateY(20px); /* Desplaza hacia abajo */
+    animation: fadeIn 1.0s ease forwards; /* Aparece suavemente */
+    /*-----este codigo sirve para la transicion de dark/ligth para que se vea mas suavizado y estilizado------*/
+    transition: background-color 0.5s ease, color 0.5s ease; /* Transición en modos oscuro y claro */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Posición original */
+    }
+}
+
+
+form {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+form h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+legend {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+input, select, textarea, button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    font-size: 16px;
+}
+button {
+    background: #333; 
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+button:hover {
+    background: #555;
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra ligera al pasar el mouse */
+}
+
+textarea {
+    resize: vertical; /* Permitir solo redimensionar verticalmente */
+}
+
+input[type="file"] {
+    border: none;
+}
+
+/* input:valid {
+    border-color: #28a745; /* Verde 
+}*/
+
+/* input:invalid {
+    border-color: #dc3545; /* Rojo 
+}*/
+
+/* Enlaces o interacciones */
+input:focus, select:focus, textarea:focus {
+
+    border-color: #fdc21c; /* Color de acento */
+    box-shadow: 0 0 10px #fdc21c; /* Brillo alrededor del campo */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Suaviza los cambios */
+   /* border-color: #333;
+    box-shadow: 0 0 5px #333;
+    transition: box-shadow 0.3s ease;*/
+}
+
+/*responsive*/
+@media (max-width: 600px) {
+    main {
+        padding: 15px;
+    }
+    
+    form {
+        padding: 15px;
+    }
+    
+    input, select, textarea, button {
+        font-size: 14px;
+    }
+}
+
+/*----------------------------------Creacion del Switch--------------------------------*
+ /* Estilo del Switch*/
+ .switch { 
+    width: 60px;
+    height: 30px;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border-radius: 100px;
+    border: #333 solid 2px;
+    background-color: #555;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    /*position: absolute;
+    top: 15px;
+    right: 15px;
+    margin: 0;*/
+ }
+
+ /*iconos dentro del switch*/
+
+ .switch i {
+    font-size: 20px;
+    color: #D9D9D9;
+    transition: color 0.3s ease;
+ }
+
+ /* Círculo dentro del switch */
+ .switch::before {
+    content: "";
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: solid thin #000;
+    left: 0;
+    right: unset;
+    transform: translateX(0);
+    transition: transform 0.3s ease; /* Transición suave para el movimiento */
+ }
+
+ .switch.active::before {
+    transform: translateX(35px); /* Desplaza el círculo a la derecha */
+    /*right: 0;*/
+    left: unset;
+    border: solid thin #fff;
+ }
+
+ /* Cambiar color del sol cuando está activo */
+
+ .switch.active #sun-icon {
+    color: #fff; /* Sol en blanco */
+ }
+
+ /* Cambiar color de la luna cuando está activo */
+
+.switch.active #moon-icon {
+    color: #fdc21c; /* Luna en amarillo */
+}
+
+ .switch.active { 
+    background-color: #fdc21c;
+    border-radius: #fff;
+ }
+/*-----------------------------------------Todos los cambios a modo dark--------------------------------------*/
+
+/*Cambio a dark fondo de body*/
+body.active {
+    background-color: #555;
+}
+
+ /*cambio a dark en el header*/
+ body.active header {
+    background-color: #333;
+ }
+
+ /* cambio a dark en el main*/
+ body.active main {
+    background-color: #333;
+ }
+
+ /*cambio a dark en el form*/
+ body.active main form{
+    background-color: #333;
+ }
+
+ /*cambio a dark h2*/
+ body.active main form h2{
+    color: #fff;
+ }
+
+ /*cambio a dark lable*/
+ body.active label {
+    color: #fff;
+ }
+
+  /*cambio a dark legend*/
+ body.active legend {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #fff;
+}
+ 
+ /*cambio a dark en e parrafo*/
+ body.active p {
+    color: #fff;
+ }
+
+ /* cambio a dark genero*/
+ body.active fieldset legend{
+    color: #fff;
+ }
+
+ /*Cambio a dark pais*/
+ body.active select {
+    color: #555;
+ }
+
+ /*cambio a dark botones*/
+ body.active button {
+    background: #fdc21c; 
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+body.active button:hover {
+    background: #fdc21c;
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra ligera al pasar el mouse */
+}
+
+body.active .gender-option {
+    color: #555;
+    padding: 10px 15px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+body.active .gender-option:hover {
+    background-color: #fdc21c;
+    transform: scale(1.05);
+}
+
+
+/*------------------------------Barra de progreso------------------------------*/
+
+/*.progress-bar {
+    background-color: #e0e0e0;
+    height: 5px;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress {
+    background-color: #fdc21c; /* Amarillo 
+    height: 100%;
+    width: 20%; /* Cambia dinámicamente 
+    transition: width 0.3s ease; /* Animación suave 
+}*/
+
+/*-----------------------------------------------Listas de género-------------------------------------*/
+.gender-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.gender-option {
+    color: #fff;
+    padding: 10px 15px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 65px; /* Mueve cada botón hacia la izquierda */
+}
+
+.gender-option:hover {
+    background-color: #555; /* Fondo más claro */
+    box-shadow: 0 0 10px #D9D9D9; /* Resplandor amarillo */
+    transform: translateY(-2px); /* Se levanta ligeramente */
+    transition: all 0.3s ease;
+    /*background-color: #555;
+    transform: scale(1.05);*/
+}
+
+input[type="radio"] {
+    display: none; /* Oculta los radio buttons originales */
+}
+
+input[type="radio"]:checked + .gender-option {
+    background-color: #555;
+    color: #fff;
+}
+
+/*-----------------Efecto de "selección flotante y rotación"----------------*/
+input[type="radio"]:checked + .gender-option {
+    background-color: #fdc21c;
+    color: #333;
+    animation: bounce-glow 0.5s ease;
+    box-shadow: 0 0 10px #fdc21c; /* Resplandor */
+}
+
+/* Animación combinada */
+@keyframes bounce-glow {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); box-shadow: 0 0 15px #fdc21c; }
+    100% { transform: scale(1); }
+}

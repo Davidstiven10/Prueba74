@@ -1,0 +1,65 @@
+
+body {
+    font-family: 'Roboto';
+    color: #333;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    
+}
+
+
+h1 {
+    font-size: 36px;
+    color: #272a2e;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+
+p {
+    font-size: 18px;
+    margin: 20px;
+    text-align: justify;
+    color: #555;
+}
+
+
+img {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    border: 3px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 50%; 
+    max-width: 300px; 
+    height: auto; 
+}
+
+
+a {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+a:hover {
+    color: #1abc9c;
+    text-decoration: underline;
+}
+
+/* Agregar espacio al final de la página */
+body::after {
+    content: '';
+    display: block;
+    height: 50px;
+}
